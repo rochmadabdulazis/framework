@@ -1,5 +1,5 @@
 <?php
-// dsn mysql:host=127.0.0.1;dbname
+// dsn mysql:host=127.0.0.1;port=;dbname=
 // dsn sqlite:/path/to/file.db
 $db_dsn = "";
 $db_user = "";
