@@ -29,18 +29,12 @@ function headerTo($link)
 {
 	header("Location: ".BASE_URL.$link);
 }
-function refTo($return = false)
+function refTo()
 {
 	$link = "";
-    if (isset($_SERVER['HTTP_REFERER'])) {
-        $link = $_SERVER['HTTP_REFERER'];
-    } else if (isset($_GET['ref'])) {
+    if (isset($_GET['ref'])) {
         $link = base64_decode($_GET['ref']);
     }
     $link = ($link != false or !empty($link)) ? $link : BASE_URL;
-	if ($return) {
-		return $link;
-	} else {
-		header("Location: ".$link);
-	}
+	header("Location: ".$link);
 }
